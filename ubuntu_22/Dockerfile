@@ -15,6 +15,9 @@ RUN apt update && \
       lvm2 \
       nfs-common \
       rsync \
+      iptables \
+      iputils-ping \
+      ntpdate \
       socat && \
     cd /var/cache/apt/archives && \
     tar zcvf /tmp/ubuntu_22.tgz *.deb

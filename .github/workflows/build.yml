@@ -11,7 +11,7 @@ jobs:
       matrix:
         include:
           ##- dist: ubuntu_20
-          ##- dist: ubuntu_22
+          - dist: ubuntu_22
           ##- dist: ubuntu_24
           - dist: debian_10
           ##- dist: debian_11
@@ -36,7 +36,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: "easzlab/kubeasz-sys-pkg"
+          images: "${{ secrets.DOCKERHUB_USERNAME }}/kubeasz-sys-pkg"
           tags: "1.0.4_${{ matrix.dist }}"
 
       - name: Set up QEMU
